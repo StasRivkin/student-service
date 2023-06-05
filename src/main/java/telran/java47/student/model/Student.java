@@ -3,6 +3,7 @@ package telran.java47.student.model;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
 @Getter
 @EqualsAndHashCode(of = "id")
 public class Student {
+    @Id
     int id;
     @Setter
     String name;
@@ -21,7 +23,7 @@ public class Student {
         this.id = id;
         this.name = name;
         this.password = password;
-        scores = new HashMap<>();
+        this.scores = new HashMap<>();
     }
 
     public boolean addScore(String exam, Integer score) {

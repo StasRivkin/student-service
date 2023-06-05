@@ -1,8 +1,7 @@
 package telran.java47.student.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import telran.java47.student.model.Student;
 import telran.java47.student.service.StudentService;
 import telran.java47.student.dto.ScoreDto;
 import telran.java47.student.dto.StudentCreateDto;
@@ -12,9 +11,10 @@ import telran.java47.student.dto.StudentUpdateDto;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class StudentControllerAppl {
-    @Autowired
-    StudentService studentService;
+
+    final StudentService studentService;
 
     @PostMapping("/student")
     public boolean addStudent(@RequestBody StudentCreateDto studentCreateDto) {

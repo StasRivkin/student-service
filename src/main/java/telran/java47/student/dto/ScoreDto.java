@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class ScoreDto {
-    String exameName;
+    String examName;
     Integer score;
 }
